@@ -18,6 +18,8 @@ export default function getContacts(key) {
             console.log("Fetching...");
             return data;
         },
+        // initial data
+        // initialData: [],
         // transform data
         select: (data) => data.map((user) => user.id),
     });
@@ -42,6 +44,6 @@ export default function getContacts(key) {
         combine: (results) => [...results?.map((result) => result.data)],
     });
 
-    console.log("queries : ", get);
+    //! returned values -----------------------------------------------------------------
     return { get };
 }

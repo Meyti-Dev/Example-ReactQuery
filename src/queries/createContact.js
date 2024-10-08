@@ -3,28 +3,39 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
 export default function createContact() {
-    // client
+    //! client
     const client = useQueryClient();
+    //! useMutation
     const { mutateAsync } = useMutation({
-        // keys
+        //! keys
         mutationKey: "contacts",
-        // mutation
+        //! mutation
         mutationFn: (data) =>
             axios.put(`http://localhost:4000/contacts/${data.id}`, data),
-        // success
-        onSuccess: ({ data }) => {
-            console.log(data);
-            client.invalidateQueries({ queryKey: ["Contacts", data.id] });
+        //! success
+        //! اگر عملیات ما موفقیت امیز بود این تابع اجرا میشود.
+        onSuccess: (data, variable, context) => {
+            console.log("data : ", data);
+            console.log("variable : ", variable);
+            console.log("context : ", context);
+            //! بروزرسانی صفحه با استفاده از نامعتبر کردن کلید
+            // client.invalidateQueries({ queryKey: ["Contacts", variable.id] });
+            //! بروزرسانی صفحه با استفاده از اضافه کردن مقدار جدید به صفحه
+            client.setQueryData(["Contacts", variable.id], variable);
+            //! گرفتن دیتای درون کش
+            const get = client.getQueriesData();
         },
-        // error
+        //! error
+        //! اگر عملیات ما موفقیت امیز نبود و خطا رخ داد این تابع اجرا میشود.
         onError: (err) => {
             console.log(err);
         },
-        // settled
+        //! settled
+        //! این تابع همیشه چه عملیات ما موفقیت امیز باشد چه نباشد اجرا میشود.
         onSettled: (data) => {
             console.log(data);
         },
-        // mutate
+        //! mutate
         onMutate: (data) => {
             console.log(data);
         },

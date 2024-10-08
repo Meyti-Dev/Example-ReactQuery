@@ -7,21 +7,21 @@ import SignIn from "./_components/SignIn";
 //! react-query hooks
 import { useIsFetching } from "@tanstack/react-query";
 import { focusManager } from "@tanstack/react-query";
+//! UUID => id creator
+import { v4 as UUID } from "uuid";
 
 export default function page() {
     const [key, setKey] = useState("contacts");
     const { get: data } = getContacts(key);
     const isUndefined = data.some((contacts) => contacts === undefined);
 
+    console.log(data);
+
     //! react-query hooks
     const isFetching = useIsFetching();
-    // if () {
-
-    // }
-    // focusManager.setFocused(true);
 
     //! logs
-    console.log(isFetching);
+    console.log(UUID());
 
     // validate & jsx
     return (
@@ -50,17 +50,9 @@ export default function page() {
                 {/* btns */}
                 <button onClick={() => setKey("contacts")}>contacts</button>
                 <button onClick={() => setKey("courses")}>courses</button>
-
-                {/* refetch data */}
-                <div className="mt-10 space-y-1">
-                    <h2 className="text-center font-bold">refetch</h2>
-                    <button
-                        className="bg-blue-500 hover:bg-blue-600 transition-colors py-2 px-3 rounded-xl text-white w-full"
-                        onClick={() => refetch()}
-                    >
-                        Refetch Data
-                    </button>
-                </div>
+                <button onClick={() => focusManager.setFocused(true)}>
+                    focus
+                </button>
             </div>
         </>
     );

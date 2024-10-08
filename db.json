@@ -2,8 +2,8 @@
   "contacts": [
     {
       "id": "iubwLJmHckK1g8j6mfkmK",
-      "username": "vahid",
-      "password": "abasi"
+      "username": "f",
+      "password": "f"
     },
     {
       "id": "iubwLJmHfkg1g8j6mfkmK",
@@ -22,8 +22,17 @@
     }
   ],
   "courses": [
-    {"coursename": "js", "teacher": "mahdi ramezani"},
-    {"coursename": "css", "teacher": "mahdi ramezani"},
-    {"coursename": "html", "teacher": "mahdi ramezani"}
+    {
+      "coursename": "js",
+      "teacher": "mahdi ramezani"
+    },
+    {
+      "coursename": "css",
+      "teacher": "mahdi ramezani"
+    },
+    {
+      "coursename": "html",
+      "teacher": "mahdi ramezani"
+    }
   ]
 }

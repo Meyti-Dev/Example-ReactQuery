@@ -10,14 +10,17 @@ export default function Provider({ children }) {
             queries: {
                 refetchOnReconnect: true,
                 refetchInterval: false,
-                refetchOnWindowFocus: false,
+                refetchOnWindowFocus: true,
                 refetchOnMount: false,
                 retry: 3,
                 retryDelay: false,
                 staleTime: Infinity,
                 gcTime: Infinity, // cacheTime = gcTime
             },
-            mutations: {},
+            mutations: {
+                retry: 3,
+                gcTime: Infinity,
+            },
         },
     });
     // provider for application
