@@ -1,0 +1,29 @@
+{
+  "contacts": [
+    {
+      "id": "iubwLJmHckK1g8j6mfkmK",
+      "username": "vahid",
+      "password": "abasi"
+    },
+    {
+      "id": "iubwLJmHfkg1g8j6mfkmK",
+      "username": "mahdi",
+      "password": "rameazni"
+    },
+    {
+      "id": "7BJXaL8z9NxTHEYT4ctHJ",
+      "username": "javad",
+      "password": "usmani"
+    },
+    {
+      "id": "_jkZkVvuug6XiqARogzw4",
+      "username": "hamed",
+      "password": "shekari"
+    }
+  ],
+  "courses": [
+    {"coursename": "js", "teacher": "mahdi ramezani"},
+    {"coursename": "css", "teacher": "mahdi ramezani"},
+    {"coursename": "html", "teacher": "mahdi ramezani"}
+  ]
+}
